@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Didi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Satisfy&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .satisfy-font {
+            font-family: 'Satisfy', cursive;
+        }
+
+        .cormorant-font {
+            font-family: 'Cormorant', serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3f8eff, #a285f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(63, 142, 255, 0.8),
+                0 0 60px rgba(162, 133, 247, 0.6),
+                0 0 90px rgba(63, 142, 255, 0.4);
+            filter: drop-shadow(0 0 20px rgba(63, 142, 255, 0.7)) drop-shadow(0 0 40px rgba(162, 133, 247, 0.5));
+            animation: text-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes text-glow {
+            0% {
+                filter: drop-shadow(0 0 20px rgba(63, 142, 255, 0.7)) drop-shadow(0 0 40px rgba(162, 133, 247, 0.5));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 30px rgba(63, 142, 255, 0.9)) drop-shadow(0 0 60px rgba(162, 133, 247, 0.7));
+            }
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(117, 40, 141, 0.5);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 20px rgba(162, 133, 247, 0.5);
+        }
+
+        .glass-panel {
+            background: linear-gradient(145deg, rgba(17, 19, 34, 0.9), rgba(25, 30, 50, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(162, 133, 247, 0.2);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(162, 133, 247, 0.15),
+                0 0 40px rgba(162, 133, 247, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(162, 133, 247, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: subtle-glow 4s ease-in-out infinite alternate;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass-panel-box {
+            min-width: 60vw;
+        }
+
+        @keyframes subtle-glow {
+            0% {
+                box-shadow:
+                    0 8px 32px rgba(0, 0, 0, 0.3),
+                    0 0 20px rgba(162, 133, 247, 0.15),
+                    0 0 40px rgba(162, 133, 247, 0.08),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+                    0 0 0 1px rgba(162, 133, 247, 0.1);
+            }
+
+            100% {
+                box-shadow:
+                    0 8px 32px rgba(0, 0, 0, 0.3),
+                    0 0 30px rgba(162, 133, 247, 0.25),
+                    0 0 60px rgba(162, 133, 247, 0.15),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+                    0 0 0 1px rgba(162, 133, 247, 0.2);
+            }
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(162, 133, 247, 0.4), rgba(255, 255, 255, 0.3), rgba(162, 133, 247, 0.4), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .glass-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(162, 133, 247, 0.08) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 70%);
+            pointer-events: none;
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Modal Animation Classes */
+        .modal-fade-in {
+            animation: modalFadeIn 0.4s ease-out forwards;
+        }
+
+        .modal-fade-out {
+            animation: modalFadeOut 0.3s ease-in forwards;
+        }
+
+        .modal-content-scale-in {
+            animation: modalContentScaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .modal-content-scale-out {
+            animation: modalContentScaleOut 0.3s ease-in forwards;
+        }
+
+        @keyframes modalFadeIn {
+            0% {
+                opacity: 0;
+                backdrop-filter: blur(0px);
+            }
+
+            100% {
+                opacity: 1;
+                backdrop-filter: blur(8px);
+            }
+        }
+
+        @keyframes modalFadeOut {
+            0% {
+                opacity: 1;
+                backdrop-filter: blur(8px);
+            }
+
+            100% {
+                opacity: 0;
+                backdrop-filter: blur(0px);
+            }
+        }
+
+        @keyframes modalContentScaleIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.7) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes modalContentScaleOut {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.8) translateY(-10px);
+            }
+        }
+
+        /* Pin Code Protection Styles */
+        .pin-protected-frame {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .pin-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(17, 19, 34, 0.95), rgba(25, 30, 50, 0.95));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(162, 133, 247, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.8s ease-in-out;
+        }
+
+        .pin-overlay.unlocked {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+
+        .pin-input-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .pin-digit {
+            width: 50px;
+            height: 50px;
+            background: rgba(162, 133, 247, 0.1);
+            border: 2px solid rgba(162, 133, 247, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+
+        .pin-digit.filled {
+            background: rgba(162, 133, 247, 0.2);
+            border-color: rgba(162, 133, 247, 0.6);
+            box-shadow: 0 0 15px rgba(162, 133, 247, 0.3);
+        }
+
+        .pin-digit.error {
+            background: rgba(255, 107, 53, 0.2);
+            border-color: rgba(255, 107, 53, 0.6);
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .pin-keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 200px;
+        }
+
+        .pin-key {
+            width: 60px;
+            height: 60px;
+            background: rgba(162, 133, 247, 0.1);
+            border: 1px solid rgba(162, 133, 247, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFFFFF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pin-key:hover {
+            background: rgba(162, 133, 247, 0.2);
+            border-color: rgba(162, 133, 247, 0.5);
+            transform: scale(1.05);
+        }
+
+        .pin-key:active {
+            transform: scale(0.95);
+        }
+
+        .pin-hint {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(226, 230, 235, 0.7);
+            text-align: center;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        .hidden-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+            }
+
+            33% {
+                transform: translateY(-20px) translateX(10px);
+            }
+
+            66% {
+                transform: translateY(10px) translateX(-10px);
+            }
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes confetti {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg) scale(1);
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            95% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(var(--drift, 0px)) rotate(180deg) scale(0.9);
+                opacity: 0;
+            }
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            95% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(var(--drift, 0px)) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 25px;
+            height: 25px;
+            z-index: 1000;
+            pointer-events: none;
+            --drift: 0px;
+        }
+
+        .message-card {
+            width: min(700px, 90vw);
+            max-width: 700px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .message-card-inner {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            transition: transform 0.8s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .message-card:hover .message-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .message-card-front,
+        .message-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .message-card-front {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .message-card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .message-content {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .message-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .message-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .message-content::-webkit-scrollbar-thumb {
+            background: rgba(162, 133, 247, 0.5);
+            border-radius: 3px;
+        }
+
+        .message-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(162, 133, 247, 0.7);
+        }
+
+        /* Fix for message card text display */
+        .message-card-back p {
+            margin: 0;
+            padding: 0;
+            white-space: pre-line;
+        }
+
+        .candle-group {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .candle-flame {
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 8px #ff6b3569);
+        }
+
+        .candle-flame.lit {
+            opacity: 1;
+            filter: drop-shadow(0 0 15px #ff6b3590) drop-shadow(0 0 25px #ffd90098);
+            animation: gentle-glow 2s ease-in-out infinite alternate;
+        }
+
+        .candle-flame.unlit {
+            opacity: 0;
+            filter: none;
+        }
+
+        @keyframes gentle-glow {
+            0% {
+                filter: drop-shadow(0 0 15px #ff6b358d) drop-shadow(0 0 25px #ffd9007b);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 20px #ff6b3580) drop-shadow(0 0 35px #ffd9009a);
+            }
+        }
+
+        .smoke {
+            opacity: 0;
+            animation: smoke 2s ease-out forwards;
+        }
+
+        @keyframes smoke {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: translateY(-20px) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-40px) scale(1.5);
+            }
+        }
+
+        .gift-box-lid,
+        .gift-ribbons,
+        .gift-bow {
+            transition: all 0.8s ease-in-out;
+            transform-origin: center;
+        }
+
+        .gift-box-open .gift-box-lid {
+            opacity: 0;
+            transform: translateY(-60px) rotateX(-90deg);
+        }
+
+        .gift-box-open .gift-ribbons {
+            opacity: 0;
+            transform: scale(0.8) translateY(-20px);
+        }
+
+        .gift-box-open .gift-bow {
+            opacity: 0;
+            transform: translateY(-80px) rotateZ(45deg) scale(0.5);
+        }
+
+        .gift-box-container {
+            position: relative;
+        }
+
+        .mini-cards-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 600px;
+            min-width: 700px;
+        }
+
+        .mini-card {
+            opacity: 0;
+            transform: translateY(50px) scale(0.8);
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+        }
+
+        .mini-card.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .gift-box-svg {
+            transition: transform 0.3s ease;
+        }
+
+        .gift-box-svg:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(145deg, rgba(63, 142, 255, 0.2), rgba(162, 133, 247, 0.2));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 8px 32px rgba(63, 142, 255, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+                0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+
+        .btn-gradient:hover {
+            background: linear-gradient(145deg, rgba(63, 142, 255, 0.3), rgba(162, 133, 247, 0.3));
+            box-shadow:
+                0 12px 40px rgba(63, 142, 255, 0.4),
+                0 0 60px rgba(162, 133, 247, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px) scale(1.02);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-gradient:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow:
+                0 4px 16px rgba(63, 142, 255, 0.3),
+                inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-gradient:disabled {
+            background: linear-gradient(145deg, rgba(100, 100, 100, 0.2), rgba(80, 80, 80, 0.2));
+            color: rgba(255, 255, 255, 0.5);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-gradient:disabled:hover {
+            transform: none;
+            background: linear-gradient(145deg, rgba(100, 100, 100, 0.2), rgba(80, 80, 80, 0.2));
+        }
+
+        #giftBoxText {
+            margin-top: 120px;
+        }
+
+        #modalContent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* Bow decoration styles */
+        .bow-decoration {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 20;
+            animation: bow-float 3s ease-in-out infinite;
+        }
+
+        .title-bow {
+            position: absolute;
+            top: -20px;
+            right: -30px;
+            z-index: 10;
+            animation: bow-float 3s ease-in-out infinite;
+        }
+
+        /* Moon decoration styles */
+        .moon-decoration {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 20;
+            animation: moon-float 4s ease-in-out infinite;
+        }
+
+        .title-moon {
+            position: absolute;
+            top: -20px;
+            left: -35px;
+            z-index: 10;
+            animation: moon-float 4s ease-in-out infinite;
+        }
+
+        @keyframes bow-float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-5px) rotate(2deg);
+            }
+        }
+
+        @keyframes moon-float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(-3deg);
+            }
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+
+            /* Hero Section Mobile */
+            .satisfy-font {
+                font-size: 2.5rem !important;
+                line-height: 1.2;
+            }
+
+            .title-bow {
+                top: -10px;
+                right: -15px;
+            }
+
+            .title-bow img {
+                width: 30px !important;
+                height: 30px !important;
+            }
+
+            .title-moon {
+                top: -10px;
+                left: -15px;
+            }
+
+            .title-moon img {
+                width: 30px !important;
+                height: 30px !important;
+            }
+
+            .cormorant-font {
+                font-size: 1rem !important;
+            }
+
+            /* Glass Panel Mobile */
+            .glass-panel {
+                padding: 1rem !important;
+                margin: 0.5rem;
+            }
+
+            /* Bow decorations mobile */
+            .bow-decoration {
+                top: 8px;
+                right: 8px;
+            }
+
+            .bow-decoration img {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+            /* Moon decorations mobile */
+            .moon-decoration {
+                top: 8px;
+                left: 8px;
+            }
+
+            .moon-decoration img {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+            /* Cake SVG Mobile */
+            #cake svg {
+                width: 280px !important;
+                height: 250px !important;
+                margin: 0.5rem auto !important;
+                padding: 0.5rem !important;
+            }
+
+            /* Gift Box Mobile */
+            .gift-box-svg {
+                width: 150px !important;
+                height: 150px !important;
+            }
+
+            /* Mini Cards Mobile */
+            .mini-cards-container {
+                min-width: auto !important;
+                max-width: 95% !important;
+                position: static !important;
+                transform: none !important;
+                margin-top: 2rem;
+            }
+
+            .mini-card {
+                margin-bottom: 1rem;
+            }
+
+            /* Message Card Mobile */
+            .message-card {
+                width: 95vw !important;
+                max-width: none !important;
+            }
+
+            .message-card-inner {
+                height: 500px !important;
+            }
+
+            .message-card-front,
+            .message-card-back {
+                padding: 1.5rem !important;
+            }
+
+            /* Pin Protected Frame Mobile */
+            .pin-protected-frame {
+                width: 90vw !important;
+                height: 60vh !important;
+                max-width: 400px;
+                max-height: 400px;
+            }
+
+            /* Pin Input Mobile */
+            .pin-digit {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 18px !important;
+            }
+
+            .pin-key {
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 16px !important;
+            }
+
+            .pin-input-container {
+                gap: 8px !important;
+            }
+
+            /* Button Mobile */
+            .btn-gradient {
+                padding: 0.75rem 2rem !important;
+                font-size: 1rem !important;
+            }
+
+            /* Section Spacing Mobile */
+            section {
+                padding: 2rem 1rem !important;
+            }
+
+            /* Headings Mobile */
+            h2 {
+                font-size: 2rem !important;
+                margin-bottom: 2rem !important;
+            }
+
+            /* Background Effects Mobile */
+            .floating-orb {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            /* Modal Mobile */
+            #modalContent {
+                padding: 1rem !important;
+                max-width: 90vw;
+            }
+
+            /* Gift Box Text Mobile */
+            #giftBoxText {
+                margin-top: 60px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Extra small screens */
+            .satisfy-font {
+                font-size: 2rem !important;
+            }
+
+            .glass-panel {
+                padding: 0.75rem !important;
+                border-radius: 1rem !important;
+            }
+
+            #cake svg {
+                width: 240px !important;
+                height: 200px !important;
+            }
+
+            .gift-box-svg {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .message-card {
+                width: 98vw !important;
+            }
+
+            .message-card-inner {
+                height: 450px !important;
+            }
+
+            .message-card-front,
+            .message-card-back {
+                padding: 1rem !important;
+            }
+
+            .message-content p {
+                font-size: 0.875rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .message-content h3 {
+                font-size: 1.25rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .pin-protected-frame {
+                width: 95vw !important;
+                height: 50vh !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            .btn-gradient {
+                padding: 0.5rem 1.5rem !important;
+                font-size: 0.9rem !important;
+            }
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .cake-box {
+            border: 2.5px solid rgba(134, 101, 255, 0.373);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-[#0a0b1a] to-[#0a0b2a] min-h-screen text-[#e2e6eb] overflow-x-hidden">
+    <!-- Background Effects -->
+    <div class="fixed inset-0 pointer-events-none">
+        <!-- Floating Orbs -->
+        <div class="floating-orb w-32 h-32 bg-[#3f8eff] top-20 left-10" style="animation-delay: 0s;"></div>
+        <div class="floating-orb w-24 h-24 bg-[#a285f7] top-40 right-20" style="animation-delay: 2s;"></div>
+        <div class="floating-orb w-20 h-20 bg-[#3f8eff] bottom-32 left-1/4" style="animation-delay: 4s;"></div>
+        <div class="floating-orb w-28 h-28 bg-[#a285f7] bottom-20 right-1/3" style="animation-delay: 1s;"></div>
+
+        <!-- Sparkles -->
+        <div class="sparkle top-1/4 left-1/4" style="animation-delay: 0s;"></div>
+        <div class="sparkle top-1/3 right-1/4" style="animation-delay: 1s;"></div>
+        <div class="sparkle bottom-1/4 left-1/3" style="animation-delay: 2s;"></div>
+        <div class="sparkle top-2/3 right-1/3" style="animation-delay: 0.5s;"></div>
+        <div class="sparkle bottom-1/3 right-1/4" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative">
+        <div class="text-center z-10">
+            <h1
+                class="satisfy-font text-4xl sm:text-6xl md:text-8xl gradient-text mb-6 sm:mb-8 animate-pulse relative p-8">
+                Happy Birthday Teena Didi.
+                <!-- Moon decoration for title -->
+                <div class="title-moon">
+                    <img src="https://img.icons8.com/?size=100&id=33118&format=png&color=000000" alt="moon"
+                        style="width: 60px; height: 60px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));">
+                </div>
+                <!-- Bow decoration for title -->
+                <div class="title-bow">
+                    <img src="https://img.icons8.com/?size=100&id=0XtosqnXhYDm&format=png&color=000000" alt="bow"
+                        style="width: 60px; height: 60px; filter: drop-shadow(0 0 10px rgba(255, 192, 203, 0.8));">
+                </div>
+            </h1>
+            <p class="cormorant-font text-xl md:text-2xl text-[#e2e6eb] opacity-80 mb-12">
+                Wishing you a day filled with happiness and a year filled with joy
+            </p>
+            <button id="celebrateBtn"
+                class="btn-gradient px-12 py-4 rounded-full cormorant-font text-xl font-semibold text-white">
+                Let's Celebrate!
+            </button>
+        </div>
+    </section>
+
+    <!-- Cake Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="satisfy-font text-5xl text-[#FFFFFF] mb-16">Make a Wish</h2>
+            <div class="glass-panel rounded-2xl p-6 sm:p-12 glow-blue mb-8 relative">
+                <!-- Moon decoration for cake section -->
+                <div id="cake" class="mb-12">
+                    <!-- Birthday Cake SVG - Completely Remade -->
+                    <svg width="400" height="350" viewBox="0 0 400 350" class="mx-auto m-12 p-5 cake-box">
+                        <defs>
+                            <!-- Cake Layer Gradients -->
+                            <linearGradient id="bottomCake" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D2691E" />
+                                <stop offset="100%" style="stop-color:#8B4513" />
+                            </linearGradient>
+                            <linearGradient id="middleCake" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#F4A460" />
+                                <stop offset="100%" style="stop-color:#DEB887" />
+                            </linearGradient>
+                            <linearGradient id="topCake" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFE4B5" />
+                                <stop offset="100%" style="stop-color:#F4A460" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Bottom Layer (Largest) -->
+                        <!-- Shadow -->
+                        <ellipse cx="200" cy="310" rx="130" ry="18" fill="#000" opacity="0.2" />
+                        <!-- Cake Body -->
+                        <ellipse cx="200" cy="290" rx="130" ry="18" fill="url(#bottomCake)" />
+                        <rect x="70" y="230" width="260" height="60" fill="url(#bottomCake)" rx="8" />
+                        <!-- Frosting Top -->
+                        <ellipse cx="200" cy="230" rx="130" ry="18" fill="#F5DEB3" />
+
+                        <!-- Middle Layer -->
+                        <!-- Shadow -->
+                        <ellipse cx="200" cy="210" rx="100" ry="15" fill="#000" opacity="0.2" />
+                        <!-- Cake Body -->
+                        <ellipse cx="200" cy="195" rx="100" ry="15" fill="url(#middleCake)" />
+                        <rect x="100" y="145" width="200" height="50" fill="url(#middleCake)" rx="6" />
+                        <!-- Frosting Top -->
+                        <ellipse cx="200" cy="145" rx="100" ry="15" fill="#FFF8DC" />
+
+                        <!-- Top Layer (Smallest) -->
+                        <!-- Shadow -->
+                        <ellipse cx="200" cy="125" rx="70" ry="12" fill="#000" opacity="0.2" />
+                        <!-- Cake Body -->
+                        <ellipse cx="200" cy="112" rx="70" ry="12" fill="url(#topCake)" />
+                        <rect x="130" y="70" width="140" height="42" fill="url(#topCake)" rx="4" />
+                        <!-- Frosting Top -->
+                        <ellipse cx="200" cy="70" rx="70" ry="12" fill="#FFFAF0" />
+
+                        <!-- Decorative Elements -->
+                        <circle cx="160" cy="175" r="3" fill="#FF1493" />
+                        <circle cx="240" cy="175" r="3" fill="#FF1493" />
+                        <circle cx="200" cy="165" r="2" fill="#FF69B4" />
+                        <circle cx="150" cy="260" r="4" fill="#FF1493" />
+                        <circle cx="250" cy="260" r="4" fill="#FF1493" />
+                        <circle cx="200" cy="250" r="3" fill="#FF69B4" />
+
+                        <!-- Candles (Properly positioned on top layer) -->
+                        <g class="candle-group" data-candle="1">
+                            <rect x="155" y="45" width="10" height="30" fill="#FFD700" rx="2" />
+                            <rect x="156" y="46" width="8" height="28" fill="#FFA500" rx="1" />
+                            <ellipse cx="160" cy="35" rx="6" ry="12" fill="#FF6B35" class="candle-flame lit" />
+                            <ellipse cx="160" cy="37" rx="3" ry="6" fill="#FFD700" class="candle-flame lit" />
+                        </g>
+
+                        <g class="candle-group" data-candle="2">
+                            <rect x="180" y="45" width="10" height="30" fill="#FFD700" rx="2" />
+                            <rect x="181" y="46" width="8" height="28" fill="#FFA500" rx="1" />
+                            <ellipse cx="185" cy="35" rx="6" ry="12" fill="#FF6B35" class="candle-flame unlit" />
+                            <ellipse cx="185" cy="37" rx="3" ry="6" fill="#FFD700" class="candle-flame unlit" />
+                        </g>
+
+                        <g class="candle-group" data-candle="3">
+                            <rect x="205" y="45" width="10" height="30" fill="#FFD700" rx="2" />
+                            <rect x="206" y="46" width="8" height="28" fill="#FFA500" rx="1" />
+                            <ellipse cx="210" cy="35" rx="6" ry="12" fill="#FF6B35" class="candle-flame unlit" />
+                            <ellipse cx="210" cy="37" rx="3" ry="6" fill="#FFD700" class="candle-flame unlit" />
+                        </g>
+
+                        <g class="candle-group" data-candle="4">
+                            <rect x="230" y="45" width="10" height="30" fill="#FFD700" rx="2" />
+                            <rect x="231" y="46" width="8" height="28" fill="#FFA500" rx="1" />
+                            <ellipse cx="235" cy="35" rx="6" ry="12" fill="#FF6B35" class="candle-flame unlit" />
+                            <ellipse cx="235" cy="37" rx="3" ry="6" fill="#FFD700" class="candle-flame unlit" />
+                        </g>
+
+                        <g class="candle-group" data-candle="5">
+                            <rect x="255" y="45" width="10" height="30" fill="#FFD700" rx="2" />
+                            <rect x="256" y="46" width="8" height="28" fill="#FFA500" rx="1" />
+                            <ellipse cx="260" cy="35" rx="6" ry="12" fill="#FF6B35" class="candle-flame unlit" />
+                            <ellipse cx="260" cy="37" rx="3" ry="6" fill="#FFD700" class="candle-flame unlit" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="space-y-4">
+                    <p class="cormorant-font text-xl text-[#e2e6eb] opacity-80">Click on the candles to light them up!
+                    </p>
+                    <button id="blowCandles"
+                        class="btn-gradient px-10 py-4 rounded-full cormorant-font text-xl font-semibold text-white"
+                        disabled>
+                        Light all candles first!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section> <!-- 
+Gift Box Section -->
+    <section class="py-32 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="satisfy-font text-6xl text-[#FFFFFF] mb-20">Special Surprise</h2>
+            <div
+                class="glass-panel glass-panel-box rounded-3xl p-8 sm:p-16 glow-purple mb-8 relative min-h-[400px] sm:min-h-[700px]">
+                <!-- Moon decoration for gift box section -->
+                <div class="moon-decoration">
+                    <img src="https://img.icons8.com/?size=100&id=33118&format=png&color=000000" alt="moon"
+                        style="width: 40px; height: 40px; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));">
+                </div>
+                <!-- Bow decoration for gift box section -->
+                <div class="bow-decoration">
+                    <img src="https://img.icons8.com/?size=100&id=0XtosqnXhYDm&format=png&color=000000" alt="bow"
+                        style="width: 40px; height: 40px; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));">
+                </div>
+                <div class="gift-box-container">
+                    <div id="giftBox" class="cursor-pointer mb-8">
+                        <svg width="220" height="220" viewBox="0 0 220 220" class="mx-auto gift-box-svg">
+                            <defs>
+                                <linearGradient id="boxGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#B22222" />
+                                    <stop offset="100%" style="stop-color:#8B0000" />
+                                </linearGradient>
+                                <linearGradient id="lidGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#DC143C" />
+                                    <stop offset="100%" style="stop-color:#B22222" />
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Gift Box Base -->
+                            <rect x="40" y="90" width="140" height="110" fill="url(#boxGradient)" rx="8" />
+                            <!-- Box Shadow -->
+                            <rect x="42" y="92" width="136" height="106" fill="#000" opacity="0.1" rx="6" />
+
+                            <!-- Gift Box Lid -->
+                            <g class="gift-box-lid">
+                                <rect id="giftLid" x="35" y="75" width="150" height="25" fill="url(#lidGradient)"
+                                    rx="8" />
+                                <rect x="37" y="77" width="146" height="21" fill="#000" opacity="0.1" rx="6" />
+                            </g>
+
+                            <!-- Ribbon Vertical -->
+                            <g class="gift-ribbons">
+                                <rect x="105" y="75" width="12" height="125" fill="#FFD700" />
+                                <rect x="106" y="76" width="10" height="123" fill="#FFA500" />
+                                <!-- Ribbon shine -->
+                                <rect x="107" y="76" width="2" height="123" fill="#FFFF99" opacity="0.6" />
+                            </g>
+
+                            <!-- Ribbon Horizontal -->
+                            <g class="gift-ribbons">
+                                <rect x="35" y="82" width="150" height="12" fill="#FFD700" />
+                                <rect x="36" y="83" width="148" height="10" fill="#FFA500" />
+                                <!-- Ribbon shine -->
+                                <rect x="36" y="84" width="148" height="2" fill="#FFFF99" opacity="0.6" />
+                            </g>
+
+                            <!-- Bow -->
+                            <g class="gift-bow">
+                                <ellipse cx="110" cy="65" rx="18" ry="10" fill="#FFD700" />
+                                <ellipse cx="110" cy="65" rx="14" ry="8" fill="#FFA500" />
+                                <ellipse cx="110" cy="65" rx="8" ry="5" fill="#FFFF99" />
+                                <!-- Bow center knot -->
+                                <ellipse cx="110" cy="65" rx="3" ry="8" fill="#CC8400" />
+                            </g>
+
+                            <!-- Sparkles around box -->
+                            <circle cx="60" cy="55" r="2" fill="#FFFFFF" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="160" cy="65" r="1.5" fill="#3f8eff" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="180" cy="130" r="2" fill="#a285f7" opacity="0.7">
+                                <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="50" cy="140" r="1.5" fill="#FFD700" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.2s"
+                                    repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                    </div>
+                    <p id="giftBoxText" class="cormorant-font text-xl text-[#e2e6eb] opacity-80">Click the gift box to
+                        reveal your surprises!</p>
+
+                    <!-- Mini Cards Container - positioned to emerge from box -->
+                    <div class="mini-cards-container">
+                        <div id="miniCards" class="grid grid-cols-1 lg:grid-cols-3 gap-8" style="display: none;">
+                            <div class="mini-card glass-panel rounded-2xl p-8 cursor-pointer hover:glow-blue transition-all relative"
+                                data-card="1">
+                                <!-- Moon decoration for mini card 1 -->
+
+                                <div class="text-center">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" class="mx-auto mb-4">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                                            fill="#3f8eff" />
+                                    </svg>
+                                    <h3 class="cormorant-font text-2xl font-semibold text-[#3f8eff] mb-4">Memory Lane
+                                    </h3>
+                                    <p class="text-base text-[#e2e6eb] leading-relaxed">Beautiful memories we've shared
+                                        together</p>
+                                </div>
+                            </div>
+                            <div class="mini-card glass-panel rounded-2xl p-8 cursor-pointer hover:glow-purple transition-all relative"
+                                data-card="2">
+                                <!-- Moon decoration for mini card 2 -->
+
+                                <div class="text-center">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" class="mx-auto mb-4">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                                            fill="#a285f7" />
+                                    </svg>
+                                    <h3 class="cormorant-font text-2xl font-semibold text-[#a285f7] mb-4">Heartfelt
+                                        Wishes</h3>
+                                    <p class="text-base text-[#e2e6eb] leading-relaxed">All my love and best wishes for
+                                        you</p>
+                                </div>
+                            </div>
+                            <div class="mini-card glass-panel rounded-2xl p-8 cursor-pointer hover:glow-blue transition-all relative"
+                                data-card="3">
+                                <!-- Moon decoration for mini card 3 -->
+
+                                <div class="text-center">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" class="mx-auto mb-4">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                                            fill="#3f8eff" />
+                                    </svg>
+                                    <h3 class="cormorant-font text-2xl font-semibold text-[#3f8eff] mb-4">Future Dreams
+                                    </h3>
+                                    <p class="text-base text-[#e2e6eb] leading-relaxed">Dreams and hopes for your bright
+                                        future</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Modal -->
+    <div id="cardModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+        style="display: none;">
+        <div id="modalContent" class="g-3xl p-12 mrounded-3xl p-12 max-w-2xl mx-4 glow-blue">
+            <div id="cardContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            <button id="closeModal"
+                class="btn-gradient px-8 py-3 rounded-full mt-8 cormorant-font text-lg">Close</button>
+        </div>
+    </div>
+
+    <!-- Flip Card Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="satisfy-font text-4xl text-[#FFFFFF] mb-12">A Special Message</h2>
+            <div class="flex justify-center">
+                <div class="message-card">
+                    <div class="message-card-inner">
+                        <div class="message-card-front glass-panel glow-blue">
+                            <div class="text-center">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" class="mx-auto mb-4">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                                        fill="#3f8eff" />
+                                </svg>
+                                <p class="cormorant-font text-lg text-[#FFFFFF]">Hover to reveal</p>
+                            </div>
+                        </div>
+                        <div class="message-card-back glass-panel glow-purple">
+                            <div class="message-content">
+                                <h3 class="satisfy-font text-2xl text-[#FFFFFF] mb-4 text-center">Special Message</h3>
+                                <p class="cormorant-font text-base text-[#dcf6ffe5] leading-relaxed text-left">
+                                    Happy Birthday Moonlight 🌙✨ whose gentle glow guides us, protects us, and
+                                    makes our team complete. Without you, our team would lose its shine, Didi 🥹🫶.
+                                    <br>
+                                    You are the most unexpected blessing of my life. From a simple gaming bond, you
+                                    became my real sister, my guide, and my strongest support. The way you care for me
+                                    like a mother, protect me from every wrong, correct me when I make mistakes, and
+                                    still love me unconditionally makes you the rarest person I know. I’m truly blessed
+                                    to have found you ❤✨.
+                                    <br>
+                                    Even when people betrayed you and didn’t value your worth, you stood tall, faced
+                                    everything alone, and stayed strong like the queen you are 💫. In my darkest times,
+                                    when I felt like giving up, you were there. Your support, your words, and your
+                                    presence gave me the courage to keep living in this cruel world. You taught me how
+                                    to be strong, to keep fighting, and to believe in myself 🫂✨.
+                                    <br>
+                                    Since you came into my life, it feels like I finally have someone who truly
+                                    understands me, accepts me, and stands by me no matter what – not just as a sister,
+                                    but also as a mother, a protector, and my greatest supporter 🥺🫂. No one has ever
+                                    treated me the way you do. You are precious beyond words, even if you underestimate
+                                    yourself. Your kindness, your strength, and your light make you unforgettable 🥹🎀.
+                                    <br>
+                                    On your birthday, I just want to say thank you for being you. Thank you for being my
+                                    sister, my guide, and my safe place. I never want to lose you, because you’re the
+                                    rarest blessing in my life. May your light keep shining forever, our Moonlight 🥰🫶✨
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Pin Protected Image Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="cormorant-font text-4xl text-[#FFFFFF] mb-12"></h2>
+            <div class="pin-protected-frame glass-panel">
+                <!-- Hidden Image -->
+                <img src="Image.jpg" alt="Special Memory" class="hidden-image" />
+
+                <!-- Pin Code Overlay -->
+                <div id="pinOverlay" class="pin-overlay">
+                    <div class="text-center mb-8">
+                        <h3 class="cormorant-font text-2xl text-[#FFFFFF] m-2">Enter Pin Code</h3>
+                        <p class="cormorant-font text-lg text-[#e2e6eb] opacity-80">Unlock to reveal something
+                        </p>
+                    </div>
+
+                    <!-- Pin Input Display -->
+                    <div class="pin-input-container">
+                        <div class="pin-digit" id="digit1"></div>
+                        <div class="pin-digit" id="digit2"></div>
+                        <div class="pin-digit" id="digit3"></div>
+                        <div class="pin-digit" id="digit4"></div>
+                    </div>
+
+                    <!-- Pin Keypad -->
+                    <div class="pin-keypad">
+                        <button class="pin-key" data-digit="1">1</button>
+                        <button class="pin-key" data-digit="2">2</button>
+                        <button class="pin-key" data-digit="3">3</button>
+                        <button class="pin-key" data-digit="4">4</button>
+                        <button class="pin-key" data-digit="5">5</button>
+                        <button class="pin-key" data-digit="6">6</button>
+                        <button class="pin-key" data-digit="7">7</button>
+                        <button class="pin-key" data-digit="8">8</button>
+                        <button class="pin-key" data-digit="9">9</button>
+                        <button class="pin-key" data-action="clear">⌫</button>
+                        <button class="pin-key" data-digit="0">0</button>
+                        <button class="pin-key" data-action="enter">✓</button>
+                    </div>
+
+                    <!-- Hint -->
+                    <div class="pin-hint">
+                        <p class="cormorant-font text-xl">💡 Hint: Today's date</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="glass-panel rounded-2xl p-4 sm:p-8 glow-blue relative">
+                <!-- Moon decoration for footer -->
+
+                <h3 class="satisfy-font text-3xl gradient-text mb-4">With Love & Best Wishes</h3>
+                <p class="cormorant-font text-lg text-[#e2e6eb] mb-4">
+                    May your birthday be the beginning of a beautiful new chapter, filled with good health, endless
+                    happiness, unbeatable strength, and countless moments that make your heart truly smile. May you
+                    always stay strong, carry joy within yourself, and keep moving forward with courage no matter what
+                    life brings. May this year bless you with success, peace, and the kind of strength that never fades.
+                    You deserve nothing less than all the love, warmth, and light the world can offer.
+                </p>
+                <p class="satisfy-font text-xl text-[#FFFFFF] font-semibold">
+                    From, Your Little Sister Ruhi ❤️
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Confetti Animation on Page Load
+        function createConfetti() {
+            for (let i = 0; i < 40; i++) {
+                const moonConfetti = document.createElement('img');
+                moonConfetti.src = 'https://img.icons8.com/?size=100&id=LlgB5a8aAr0G&format=png&color=000000';
+                moonConfetti.className = 'confetti';
+
+                // Position randomly across the top, starting outside view
+                moonConfetti.style.left = Math.random() * 100 + 'vw';
+                moonConfetti.style.top = '-10vh';
+
+                // Random sizes
+                moonConfetti.style.width = (Math.random() * 20 + 15) + 'px';
+                moonConfetti.style.height = (Math.random() * 20 + 15) + 'px';
+
+                // Staggered timing for natural snowfall effect
+                moonConfetti.style.animationDelay = Math.random() * 4 + 's';
+                moonConfetti.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                moonConfetti.style.animation = 'snowfall ' + (Math.random() * 4 + 3) + 's linear forwards';
+
+                // Add horizontal drift for natural movement
+                const drift = (Math.random() - 0.5) * 100; // -50px to +50px drift
+                moonConfetti.style.setProperty('--drift', drift + 'px');
+
+                // Add yellow and white colors only
+                const colors = [
+                    'brightness(1.3) drop-shadow(0 0 8px rgba(255, 215, 0, 0.8))', // Yellow
+                    'brightness(1.5) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))' // White
+                ];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                moonConfetti.style.filter = randomColor;
+
+                document.body.appendChild(moonConfetti);
+
+                setTimeout(() => {
+                    if (moonConfetti.parentNode) {
+                        moonConfetti.remove();
+                    }
+                }, 8000);
+            }
+        }
+
+        // Candle Lighting Functionality
+        let litCandles = 1; // First candle starts lit
+        const totalCandles = 5;
+
+        document.querySelectorAll('.candle-group').forEach((candleGroup, index) => {
+            candleGroup.addEventListener('click', function () {
+                const flames = this.querySelectorAll('.candle-flame');
+                const isUnlit = flames[0].classList.contains('unlit');
+
+                if (isUnlit) {
+                    flames.forEach(flame => {
+                        flame.classList.remove('unlit');
+                        flame.classList.add('lit');
+                    });
+                    litCandles++;
+
+                    // Check if all candles are lit
+                    if (litCandles === totalCandles) {
+                        const blowButton = document.getElementById('blowCandles');
+                        blowButton.textContent = 'Make A Wish & Blow Out The Candles';
+                        blowButton.disabled = false;
+                    }
+                }
+            });
+        });
+
+        // Blow Candles Functionality
+        document.getElementById('blowCandles').addEventListener('click', function () {
+            const candleGroups = document.querySelectorAll('.candle-group');
+
+            candleGroups.forEach((group, index) => {
+                setTimeout(() => {
+                    const flames = group.querySelectorAll('.candle-flame');
+                    flames.forEach(flame => {
+                        flame.classList.remove('lit');
+                        flame.classList.add('unlit');
+                    });
+                }, index * 300);
+            });
+
+            // Trigger moon confetti when candles are blown
+            createConfetti();
+
+            this.textContent = 'Wish Made!';
+            this.disabled = true;
+            litCandles = 0;
+        });
+
+        // Gift Box Functionality
+        let giftBoxOpened = false;
+        document.getElementById('giftBox').addEventListener('click', function () {
+            if (giftBoxOpened) return;
+
+            const giftBox = this;
+            const miniCards = document.getElementById('miniCards');
+            const giftBoxText = document.getElementById('giftBoxText');
+
+            giftBoxOpened = true;
+            giftBox.classList.add('gift-box-open');
+
+            // Hide the instruction text
+            giftBoxText.style.opacity = '0';
+
+            setTimeout(() => {
+                miniCards.style.display = 'grid';
+                const cards = document.querySelectorAll('.mini-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 300);
+                });
+
+                // Update text
+                setTimeout(() => {
+                    giftBoxText.textContent = 'Click on any card to read the message!';
+                    giftBoxText.style.opacity = '1';
+                }, 1000);
+            }, 800);
+        });
+
+        // Mini Cards Modal Functionality
+        const cardContents = {
+            1: {
+                title: "Unbreakable Bond",
+                content: "Sis, even though we met online through gaming, the bond we’ve built feels just as real as any family tie. You’ve always had my back — protecting me, guiding me, and reminding me that I’m never alone, even in the toughest moments. I’m beyond lucky to have you as my sister in this journey."
+            },
+            2: {
+                title: "Always Grateful",
+                content: "You’re more than just a sister — you’re my shield, my cheerleader, and the one who keeps me going when life gets rough. Thank you for caring for me like your own, for supporting me when I fall, and for making sure I never lose hope. I’ll always treasure the way you look out for me."
+            },
+            3: {
+                title: "Happy Birthday, Sis!",
+                content: "On your special day, I wish you endless happiness, victories in every moment of life because i know how strong you are, and you deserve all the love. May every challenge turn into a win, and may your future be as bright as the light you’ve brought into my life. Happy birthday to the best sister I could ever ask for! May you shine forever like MOON LIGHT"
+            }
+        };
+
+
+        // Modal animation functions
+        function openModal(modal, modalContent) {
+            modal.style.display = 'flex';
+            modal.classList.remove('modal-fade-out');
+            modalContent.classList.remove('modal-content-scale-out');
+
+            // Trigger animations
+            requestAnimationFrame(() => {
+                modal.classList.add('modal-fade-in');
+                modalContent.classList.add('modal-content-scale-in');
+            });
+        }
+
+        function closeModal(modal, modalContent) {
+            modal.classList.remove('modal-fade-in');
+            modalContent.classList.remove('modal-content-scale-in');
+
+            modal.classList.add('modal-fade-out');
+            modalContent.classList.add('modal-content-scale-out');
+
+            // Hide modal after animation completes
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modal.classList.remove('modal-fade-out');
+                modalContent.classList.remove('modal-content-scale-out');
+            }, 300);
+        }
+
+        document.querySelectorAll('.mini-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const cardNumber = this.dataset.card;
+                const content = cardContents[cardNumber];
+                const modal = document.getElementById('cardModal');
+                const modalContent = document.getElementById('modalContent');
+                const cardContent = document.getElementById('cardContent');
+
+                cardContent.innerHTML = `
+                    <div class="text-center">
+                        <h3 class="cormorant-font text-3xl text-[#FFFFFF] mb-6">${content.title}</h3>
+                        <p class="cormorant-font text-xl text-[#e2e6eb] leading-relaxed">${content.content}</p>
+                    </div>
+                `;
+
+                openModal(modal, modalContent);
+            });
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function () {
+            const modal = document.getElementById('cardModal');
+            const modalContent = document.getElementById('modalContent');
+            closeModal(modal, modalContent);
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('cardModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                const modal = document.getElementById('cardModal');
+                const modalContent = document.getElementById('modalContent');
+                closeModal(modal, modalContent);
+            }
+        });
+
+        // Celebration Button Functionality
+        document.getElementById('celebrateBtn').addEventListener('click', function () {
+            // Create massive confetti from all corners
+            createMassiveConfetti();
+
+            // Play birthday music (using Web Audio API for a simple tune)
+            playBirthdayTune();
+
+            // Update button text
+            this.textContent = 'Celebrating!';
+            this.disabled = true;
+
+            // Re-enable after 10 seconds
+            setTimeout(() => {
+                this.textContent = 'Let\'s Celebrate Again!';
+                this.disabled = false;
+            }, 10000);
+        });
+
+        // Enhanced confetti function for celebration
+        function createMassiveConfetti() {
+            // Create massive moon snowfall from the top of the screen
+            for (let i = 0; i < 80; i++) {
+                const moonConfetti = document.createElement('img');
+                moonConfetti.src = 'https://img.icons8.com/?size=100&id=LlgB5a8aAr0G&format=png&color=000000';
+                moonConfetti.className = 'confetti';
+
+                // Position randomly across the entire top width, starting outside view
+                moonConfetti.style.left = Math.random() * 100 + 'vw';
+                moonConfetti.style.top = '-10vh';
+
+                // Varied sizes for visual interest
+                moonConfetti.style.width = (Math.random() * 35 + 20) + 'px';
+                moonConfetti.style.height = (Math.random() * 35 + 20) + 'px';
+
+                // Staggered timing for continuous snowfall effect
+                moonConfetti.style.animationDelay = Math.random() * 3 + 's';
+                const duration = Math.random() * 3 + 4; // 4-7 seconds
+                moonConfetti.style.animation = 'snowfall ' + duration + 's linear forwards';
+
+                // Add horizontal drift for natural movement
+                const drift = (Math.random() - 0.5) * 150; // -75px to +75px drift
+                moonConfetti.style.setProperty('--drift', drift + 'px');
+
+                // Add yellow and white colors only with enhanced glow
+                const colors = [
+                    'brightness(1.4) drop-shadow(0 0 12px rgba(255, 215, 0, 0.9))', // Yellow
+                    'brightness(1.6) drop-shadow(0 0 12px rgba(255, 255, 255, 0.9))' // White
+                ];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                moonConfetti.style.filter = randomColor;
+
+                document.body.appendChild(moonConfetti);
+
+                setTimeout(() => {
+                    if (moonConfetti.parentNode) {
+                        moonConfetti.remove();
+                    }
+                }, 8000);
+            }
+        }
+
+        // Simple birthday tune using Web Audio API
+        function playBirthdayTune() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const notes = [
+                { freq: 261.63, duration: 0.5 }, // C
+                { freq: 261.63, duration: 0.5 }, // C
+                { freq: 293.66, duration: 1 },   // D
+                { freq: 261.63, duration: 1 },   // C
+                { freq: 349.23, duration: 1 },   // F
+                { freq: 329.63, duration: 2 },   // E
+            ];
+
+            let currentTime = audioContext.currentTime;
+
+            notes.forEach(note => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.setValueAtTime(note.freq, currentTime);
+                oscillator.type = 'sine';
+
+                gainNode.gain.setValueAtTime(0, currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.3, currentTime + 0.1);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, currentTime + note.duration);
+
+                oscillator.start(currentTime);
+                oscillator.stop(currentTime + note.duration);
+
+                currentTime += note.duration;
+            });
+        }
+
+        // Pin Code System
+        let currentPin = '';
+        const correctPin = '0410';
+
+        function updatePinDisplay() {
+            for (let i = 1; i <= 4; i++) {
+                const digit = document.getElementById(`digit${i}`);
+                if (i <= currentPin.length) {
+                    digit.textContent = '●';
+                    digit.classList.add('filled');
+                } else {
+                    digit.textContent = '';
+                    digit.classList.remove('filled');
+                }
+                digit.classList.remove('error');
+            }
+        }
+
+        function showError() {
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`digit${i}`).classList.add('error');
+            }
+            setTimeout(() => {
+                for (let i = 1; i <= 4; i++) {
+                    document.getElementById(`digit${i}`).classList.remove('error');
+                }
+                currentPin = '';
+                updatePinDisplay();
+            }, 1000);
+        }
+
+        function unlockImage() {
+            const overlay = document.getElementById('pinOverlay');
+            overlay.classList.add('unlocked');
+
+            // Create success confetti
+            setTimeout(() => {
+                createMassiveConfetti();
+            }, 400);
+        }
+
+        // Pin keypad event listeners
+        document.querySelectorAll('.pin-key').forEach(key => {
+            key.addEventListener('click', function () {
+                const digit = this.dataset.digit;
+                const action = this.dataset.action;
+
+                if (digit && currentPin.length < 4) {
+                    currentPin += digit;
+                    updatePinDisplay();
+
+                    // Auto-check when 4 digits entered
+                    if (currentPin.length === 4) {
+                        setTimeout(() => {
+                            if (currentPin === correctPin) {
+                                unlockImage();
+                            } else {
+                                showError();
+                            }
+                        }, 300);
+                    }
+                } else if (action === 'clear') {
+                    currentPin = currentPin.slice(0, -1);
+                    updatePinDisplay();
+                } else if (action === 'enter' && currentPin.length === 4) {
+                    if (currentPin === correctPin) {
+                        unlockImage();
+                    } else {
+                        showError();
+                    }
+                }
+            });
+        });
+
+        // Initialize confetti on page load
+        window.addEventListener('load', function () {
+            setTimeout(createConfetti, 500);
+        });
+
+        // Add some sparkle effects
+        function addRandomSparkles() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = '0s';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // Add sparkles periodically
+        setInterval(addRandomSparkles, 2000);
+    </script>
+</body>
+
+</html>""
